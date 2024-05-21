@@ -1,0 +1,268 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+main {
+    width: 600px;
+    height: 375px;
+
+    /* creates a box around main that is 600px long */
+
+    display: grid;
+    grid-template-areas:
+        "left right";
+    /* creates a css grid layout */
+
+    grid-template-columns: 1fr 1fr;
+    /* styles column spacing */
+
+    font-family: "Hanken Grotesk";
+}
+
+.left {
+    width: 300px;
+    grid-area: left;
+    background-image: linear-gradient(hsl(252, 100%, 67%),
+            hsl(241, 81%, 54%));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7%;
+}
+
+.result {
+    text-align: center;
+    color: hsl(241, 100%, 89%);
+
+}
+
+.circle {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 100%;
+    background-image: linear-gradient(hsl(241, 72%, 46%), hsl(252, 100%, 67%));
+
+    width: 150px;
+    height: 150px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 55px;
+    color: white;
+    margin: 0;
+}
+
+h5 {
+    text-align: center;
+    font-size: 14px;
+    color: hsl(241, 100%, 89%);
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+
+.score {
+    display: flex;
+    text-align: center;
+    color: hsl(241, 100%, 89%);
+    width: 75%;
+    margin: 0;
+}
+
+.right {
+    grid-area: right;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    box-shadow: 30px 5px 50px rgba(44, 43, 47, 0.252);
+    border-radius: 7%;
+}
+
+.summary {
+    margin-left: 5px;
+}
+
+.rightGrid {
+    display: grid;
+    grid-template-areas:
+        "Reaction"
+        "Memory"
+        "Verbal"
+        "Visual";
+    gap: 10px;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: 5px;
+}
+
+.reaction {
+    grid-area: Reaction;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 7px;
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.reactionWord {
+    color: hsl(0, 100%, 67%);
+}
+
+.reactionContent {
+    margin-left: 10px;
+    word-spacing: 80px;
+}
+
+.memory {
+    grid-area: Memory;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 7px;
+    background-color: hsl(39, 100%, 56%, 0.1);
+}
+
+.memoryWord {
+    color: hsl(39, 100%, 56%);
+}
+
+.memoryContent {
+    margin-left: 10px;
+    word-spacing: 82px;
+}
+
+.verbal {
+    grid-area: Verbal;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: hsl(166, 100%, 37%, 0.1);
+}
+
+.verbalWord {
+    color: hsl(166, 100%, 37%);
+}
+
+.verbalContent {
+    margin-left: 10px;
+    word-spacing: 95px;
+}
+
+.visual {
+    grid-area: Visual;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 7px;
+    background-color: hsl(234, 85%, 45%, 0.1);
+}
+
+.visualWord {
+    color: hsl(234, 85%, 45%);
+}
+
+.visualContent {
+    margin-left: 10px;
+    word-spacing: 99px;
+}
+
+.dark {
+    color: hsl(224, 30%, 27%);
+    font-weight: bold;
+}
+
+.light {
+    color: grey;
+    font-weight: bold;
+}
+
+button {
+    background-color: hsl(224, 30%, 27%);
+    border-radius: 30px;
+    width: 250px;
+    height: 43px;
+    margin-left: 5px;
+    margin-top: 20px;
+
+    font-family: "Hanken Grotesk";
+    color: white;
+}
+
+@media(max-width:350px) {
+    main {
+        width: 325px;
+        height: 700px;
+
+        display: grid;
+        grid-template-areas:
+            "top"
+            "bottom";
+        /* creates a css grid layout */
+
+        grid-template-rows: 1fr 3fr;
+        /* styles column spacing */
+    }
+
+    .left {
+        height: 275px;
+        grid-area: top;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .right {
+        grid-area: bottom;
+        align-items: center;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        box-shadow: 0px;
+    }
+
+    h2 {
+        margin: 10px;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h5 {
+        font-size: 10px;
+    }
+
+    .score {
+        font-size: 14px;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
